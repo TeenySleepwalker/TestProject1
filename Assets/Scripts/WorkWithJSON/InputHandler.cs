@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class InputHandler : MonoBehaviour {
     [SerializeField] InputField nameInput;
-   // [SerializeField] 
-    string filename= "/info.dat";
+    string filename = "info.dat"; //"Assets/Resources/info.json";
+    //public TextAsset textAsset;
 
     public GameObject _itemObject;//= new GameObject();
     GameObject objectItems;// = new GameObject();
@@ -13,6 +13,10 @@ public class InputHandler : MonoBehaviour {
     public static List<InputEntry> entries = new List<InputEntry> ();
 
     private void Start () {
+      //  string s_Text = textAsset.text;
+       // Debug.Log(s_Text);
+
+
         entries = FileHandler.ReadListFromJSON<InputEntry>(filename);
         for (int i = 0; i <= entries.Count - 1; i++)
         {
